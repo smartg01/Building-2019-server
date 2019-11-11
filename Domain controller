@@ -1,0 +1,15 @@
+BAU is to create 2 Domain controllers. 
+
+Once installed amend IP to static IP in Network & sharing centre. 
+DC name - amend PC name in PowerShell (Run in Admin) ###Rename-Computer DC1###
+Create Domain - Access server manager >>Add roles & features >>Role based >> AD domain services (ticked) & DNS (ticked) >> Features (Next) >> Install features
+
+Promote server to Domain controller via Server management dashboard: Deployment config >> Add a new forest >> "Name of domain" >> Next
+DC options >> tick DNS server >> tick GC >> type PW & document >> Next
+DNS options >> Create DNS delegations
+Additional options >> NetBIOS  domain name should prompt to domain type in on Deployment config screen. 
+Paths>> next
+Review>> options
+Prerequisites>>> install
+
+Reboot
