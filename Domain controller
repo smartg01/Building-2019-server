@@ -13,3 +13,21 @@ Review>> options
 Prerequisites>>> install
 
 Reboot
+
+#
+#Windows PowerShell script for AD DS Deployment
+#
+
+Import-Module ADDSDeployment
+Install-ADDSForest `
+-CreateDnsDelegation:$false `
+-DatabasePath "C:\Windows\NTDS" `
+-DomainMode "Winthreshold" `
+-DomainName "**********" `
+-DomainNetbiosName "****" `
+-ForestMode "Winthreshold" `
+-InstallDns:$True `
+-LogPath "C:\Windows\NTDS" `
+-NoRebootOnCompletion:$True `
+-SysvolPath "C:\Windows\SYSVOL" `
+-Force:$True
