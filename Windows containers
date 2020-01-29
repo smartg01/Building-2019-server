@@ -1,23 +1,23 @@
 ###DO NOT RUN IN POWERSHELL ISE AS IT IS NOT CONFIGURED FOR CONTAINER VIRTUALISATION###
-
+##Install windows feature for containers##
 Install-windowsfeature containers 
-
+###If not already installed this will require restart##
 Restart-Computer -force
 
+###Install Docker module for powershell###
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
-
+###Install DOcker software###
 Install-Package -Name docker -ProviderName DockerMsftProvider
-
+###Server will require reboot###
 Restart-Computer -Force
 
-
+###Pull down Docker base images that is compatible###
 docker pull mcr.microsoft.com/windows/nanoserver:1903
 ####docker : a Windows version 10.0.18362-based image is incompatible with a 10.0.17763 host###
 ###Only run nano in HyperV isolation###
 docker pull mcr.microsoft.com/windows/nanoserver:1803
 docker pull mcr.microsoft.com/windows/nanoserver:1703
 
+###Fire up docker image###
 docker run mcr.microsoft.com/windows/servercore:ltsc2019
-
-
 Docker run -it mcr.microsoft.com/windows/nanoserver:1803 cmd.exe
