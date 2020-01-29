@@ -1,3 +1,5 @@
+###DO NOT RUN IN POWERSHELL ISE AS IT IS NOT CONFIGURED FOR CONTAINER VIRTUALISATION###
+
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 
 Install-Package -Name docker -ProviderName DockerMsftProvider
@@ -7,8 +9,11 @@ Restart-Computer -Force
 
 docker pull mcr.microsoft.com/windows/nanoserver:1903
 ####docker : a Windows version 10.0.18362-based image is incompatible with a 10.0.17763 host###
+###Only run nano in HyperV isolation###
 docker pull mcr.microsoft.com/windows/nanoserver:1803
 docker pull mcr.microsoft.com/windows/nanoserver:1703
+
+docker run mcr.microsoft.com/windows/servercore:ltsc2019
 
 
 Docker run -it mcr.microsoft.com/windows/nanoserver:1803 cmd.exe
