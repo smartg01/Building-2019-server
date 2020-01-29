@@ -3,3 +3,8 @@ Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 Install-Package -Name docker -ProviderName DockerMsftProvider
 
 Restart-Computer -Force
+
+
+docker pull mcr.microsoft.com/windows/nanoserver:1903
+docker pull mcr.microsoft.com/windows/nanoserver:1803
+docker pull mcr.microsoft.com/windows/nanoserver:1703
