@@ -1,5 +1,9 @@
 ###DO NOT RUN IN POWERSHELL ISE AS IT IS NOT CONFIGURED FOR CONTAINER VIRTUALISATION###
 
+Install-windowsfeature containers 
+
+Restart-Computer -force
+
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 
 Install-Package -Name docker -ProviderName DockerMsftProvider
