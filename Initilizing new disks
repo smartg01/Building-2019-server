@@ -1,0 +1,6 @@
+To initilise new disk, access Disk Management (As admin if possible)
+From there right click on 'unallocated' and select 'New Simple Volume'
+Select next
+Select volume size
+Select drive letter
+Type out Volume Label ALWAYS NTFS UNLESS SPECIFIED, ALWAYS SELECT FORMAT DRIVE
